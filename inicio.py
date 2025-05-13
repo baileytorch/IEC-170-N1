@@ -1,26 +1,7 @@
+import version.version
+
 #Sistema de gestion de inventario para una tienda
 #autor: Manuel Sanchez
-"""
-version MAJOR.MINOR.PATCH
-EJEMPLO v2.4.1
-
-MAJOR: (version mayor): Se incrementa cuando se hacen cambios grandes (generalmente incomptaibles)
-    con la version anterior.
-MINOR: (version menor): Se incrementa cuando se agregan uevas funcionalidades al sistema, pero 
-    sin romper la compatibilidad.
-PATCH: (parche o revisión): Se incrementa, cuando se corrigen errores en el sistema, o mejoran 
-    funcionalidades 
-
-"""
-#Historial 
-#       15/04/2025 Inicio del desarrollo v1.0.0
-#       22/04/2025 Agrega opción 5 Modificar Cantidad v1.1.0
-#       22/04/2025 Mejora las funcionalidades de 3 y 4 al buscar con while v1.1.1
-#       29/04/2025 Cambio de paradigma, inicio el trabajo con funciones v2.0.0
-#       05/05/2025 Se reemplaza el buscar y mostrar producto por funciones y se 
-#                  agregar control de keyboardInterrupt v2.0.1
-#       
-
 
 def fn_get_num_valido(mensaje):
     """
@@ -88,14 +69,13 @@ def fn_buscar(lista, nombre):
 #PROGRAMA PRINCIPAL (PP)
 # listas para administrar los productos
 try:
-    version = "v2.0.1"
     lnombre = ["Plumon", "Borrador", "Pizarra"]
     lprecio = [1280.0, 3500.0, 13500.0]
     lstock = [20,8, 10]
 
     salir = False
     while not salir:
-        print(f" *** Menú {version} ***")
+        print(f" *** Menú {version.version.version} ***")
         print("[1] Agrega producto")
         print("[2] Listar productos")
         print("[3] Buscar por nombre")

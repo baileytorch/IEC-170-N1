@@ -1,3 +1,5 @@
 version/__pycache__/version.cpython-313.pyc
 auxiliares/__pycache__/listas.cpython-313.pyc
 auxiliares/__pycache__/validacion_numeros.cpython-313.pyc
+productos/__pycache__/buscar_producto.cpython-313.pyc
+productos/__pycache__/mostrar_producto.cpython-313.pyc

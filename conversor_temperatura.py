@@ -45,6 +45,10 @@ def convertir_fahrenheit_kelvin(temperatura_inicial):
     temperatura = convertir_fahrenheit_celsius(temperatura_inicial) + 273.15
     return temperatura
 
+def solicitar_datos():    
+    temperatura_usuario = float(input("Ingrese su Temperatura Inicial: "))
+    return temperatura_usuario
+
 def programa_principal():
     print()
     print("Súper Conversor de Temperaturas!!")
@@ -52,24 +56,52 @@ def programa_principal():
     
     while True:
         cargar_menu()
-        opcion = input("Selecciones su opción [0-6]")
-        temperatura_usuario = input("Ingrese su Temperatura Inicial: ")
+        print()
+        opcion = input("Selecciones su opción [0-6]: ")
+        resultado = 0
+        temperatura_inicial = 0
+        escala_inicial = ""
+        escala_final = ""
         
         if opcion == "1":
-            pass
+            escala_inicial = "°C"
+            escala_final = " K"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_celsius_kelvin(temperatura_inicial)
         elif opcion == "2":
-            pass
+            escala_inicial = "°C"
+            escala_final = "°F"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_celsius_fahrenheit(temperatura_inicial)
         elif opcion == "3":
-            pass
+            escala_inicial = " K"
+            escala_final = "°C"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_kelvin_celsius(temperatura_inicial)
         elif opcion == "4":
-            pass
+            escala_inicial = " K"
+            escala_final = "°F"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_kelvin_fahrenheit(temperatura_inicial)
         elif opcion == "5":
-            pass
+            escala_inicial = "°F"
+            escala_final = "°C"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_fahrenheit_celsius(temperatura_inicial)
         elif opcion == "6":
-            pass
+            escala_inicial = "°F"
+            escala_final = " K"
+            temperatura_inicial = solicitar_datos()
+            resultado = convertir_fahrenheit_kelvin(temperatura_inicial)
         elif opcion == "0":
-            print("Chao chao loh vimoh!")
+            print("Saliendo de Sistema...")
             break
         else:
             print("Opción Inválida")
-            return
+            print()
+            pass
+        print()
+        print(f"{temperatura_inicial}{escala_inicial} = {resultado}{escala_final}")
+        print()
+        
+programa_principal()
